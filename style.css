@@ -13,7 +13,7 @@
 
 .container div {
   padding: 15px;
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 40px);
   font-family: Helvetica;
   font-weight: bold;
   color: white;
@@ -33,6 +33,10 @@
   justify-content: start;
 }
 
+#menu li {
+ font-size: clamp(13px, 2vw, 18px);
+}
+
 .menu ul{
   display:grid;
   grid-template-columns: repeat(4,1fr);
@@ -40,10 +44,11 @@
 
 .menu ul,
 .menu li {
+  font-size: 5px;
   display:grid;
-  justify-self: center; 
+  justify-self: center;
   align-self:center;
-  font-size: 16px;
+  font-size: 1rem;
   list-style-type: none;
   /* justify-content: space-evenly;
   justify-items: center;
@@ -68,6 +73,8 @@
 
 
 .sidebar .side-content {
+  display:grid;
+  align-content: center;
   background-color: white;
   color: black;
   font-size: 16px;
@@ -88,13 +95,15 @@
 }
 
 .nav ul li {
-  font-size: 16px;
+  font-size: clamp(10px, 2vw, 20px);
   text-transform: uppercase;
   list-style-type: none;
 }
 
 .article {
   display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+  gap: 15px;
   background-color: #bccbde;
   grid-row: 3/4;
   grid-column: 2/3;
@@ -108,6 +117,7 @@
 }
 
 .article .card {
+  height: 200px;
   background-color: #FFFFFF;
   color: black;
   text-align: center;
